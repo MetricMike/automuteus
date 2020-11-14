@@ -9,11 +9,6 @@
         "description": "The externally-accessible URL for *this* instance of the discord bot. For example, `https://<REPLACE_THIS_PART>.herokuapp.com:443`.",
         "required": true
       },
-      "GALACTUS_EXTERNAL_PORT": {
-        "description": "The port the Bot will use for incoming Socket.io communications from the capture client. Defaults to 8123, but you must override this in Heroku to 443.",
-        "required": true,
-        "value": 443
-      },
       "DISCORD_BOT_TOKEN": {
         "description": "The Bot Token used by the bot to authenticate with Discord.",
         "required": true
