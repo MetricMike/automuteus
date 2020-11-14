@@ -5,6 +5,15 @@
     "logo": "https://github.com/denverquane/amongusdiscord/raw/master/assets/botProfilePicture.jpg",
     "keywords": ["go", "among us", "discord"],
     "env": {
+      "GALACTUS_HOST": {
+        "description": "The externally-accessible URL for *this* instance of the discord bot. For example, `https://<REPLACE_THIS_PART>.herokuapp.com:443`.",
+        "required": true
+      },
+      "GALACTUS_EXTERNAL_PORT": {
+        "description": "The port the Bot will use for incoming Socket.io communications from the capture client. Defaults to 8123, but you must override this in Heroku to 443.",
+        "required": true,
+        "value": 443
+      },
       "DISCORD_BOT_TOKEN": {
         "description": "The Bot Token used by the bot to authenticate with Discord.",
         "required": true
@@ -17,27 +26,6 @@
         "description": "If your bot is a member of multiple guilds, this ID can be used to specify the single guild that it should use for emojis (no need to add the emojis to ALL servers).",
         "required": false
       },
-      "PORT": {
-        "description": "The port the Bot will use for incoming Socket.io communications from the capture client. Defaults to 8123.",
-        "required": false
-      },
-      "HOST": {
-        "description": "The externally-accessible URL for *this* instance of the discord bot. For example, `https://<REPLACE_THIS_PART>.herokuapp.com:443`.",
-        "required": false
-      },
-      "GOVERSION": {
-        "description": "Default Go version to use for Heroku deployment. Defaults to Go 1.15. Required to be >= 1.13 for package purposes.",
-        "value": "1.15",
-        "required": true
-      },
-      "CONFIG_PATH": {
-        "description": "Alternate filesystem path for guild config files. Defaults to ./",
-        "required": false
-      },
-      "LOG_PATH": {
-        "description": "Filesystem path for log files. Defaults to `./`",
-        "required": false
-      },
       "CAPTURE_TIMEOUT": {
         "description": "How many seconds of no capture events received before the Bot terminates the associated game/connection. Defaults to 600 seconds.",
         "required": false
@@ -46,5 +34,8 @@
         "description": "The bot localization language in Discord. By default en.",
         "required": false
       }
-    }
+    },
+    "addons": [
+      "heroku-redis"
+    ]
   }

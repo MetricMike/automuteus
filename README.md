@@ -134,6 +134,8 @@ unRAID hosting steps are are not yet updated for v3.0+ of AutoMuteUs, and as suc
 
 ## Heroku
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+Heroku hosting steps are not officially supported, but you may find help in #self-hosted-support
 Heroku hosting steps are are not yet updated for v3.0+ of AutoMuteUs, and as such is not supported at this time.
 
 ## Environment Variables
